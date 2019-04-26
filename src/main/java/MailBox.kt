@@ -13,7 +13,7 @@ data class Done(val ack : CompletableDeferred<Boolean>) : Action()
 
 
 class MailBox : CoroutineScope by MainScope(){
-    
+
 
     val actor = actor<Action>(Dispatchers.Default, 0) {
         consumeEach { action ->
